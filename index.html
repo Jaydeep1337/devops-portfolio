@@ -1,268 +1,824 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name — Resume</title>
-  <meta name="description" content="Animated, responsive resume / CV" />
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* ---------- CSS VARIABLES & RESET ---------- */
-    :root{
-      --bg: #0f1724;
-      --card: #0b1220;
-      --muted: #9aa4b2;
-      --accent: #6ee7b7;
-      --glass: rgba(255,255,255,0.03);
-      --radius: 14px;
-      --max-width: 960px;
-      --trans: 400ms cubic-bezier(.2,.9,.2,1);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color: #dbe7ef;background: linear-gradient(180deg,#071026 0%, #031126 100%);-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* ---------- LAYOUT ---------- */
-    .wrap{max-width:var(--max-width);margin:48px auto;padding:28px;display:grid;grid-template-columns:280px 1fr;gap:28px}
-    @media (max-width:880px){.wrap{grid-template-columns:1fr;padding:20px} .left{order:2} .right{order:1}}
+    <title>Jaydeep Gaikwad | DevOps Engineer</title>
 
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);padding:20px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    <meta name="description"
+        content="Jaydeep Gaikwad - DevOps Engineer specializing in Azure DevOps, Kubernetes, OpenShift, Terraform and Cloud Infrastructure.">
 
-    /* ---------- LEFT COLUMN ---------- */
-    .left .photo{width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto;border:3px solid rgba(255,255,255,0.06)}
-    .name{margin-top:12px;text-align:center}
-    .name h1{font-size:20px;margin:0}
-    .name p{margin:6px 0 0;color:var(--muted);font-size:13px}
-    .contact{margin-top:16px;font-size:14px;color:var(--muted)}
-    .skill-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .skill{background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    /* ---------- RIGHT COLUMN ---------- */
-    .hero{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .title{line-height:1}
-    .title h2{margin:0;font-size:20px}
-    .title span{display:block;color:var(--muted);font-size:13px}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    .section{margin-top:18px}
-    .section h3{margin:0 0 10px 0;font-size:15px}
-    .exp-item{padding:12px;border-radius:10px;transition:transform var(--trans)}
+    <link rel="stylesheet" href="style.css">
 
-    /* ---------- TIMELINE ---------- */
-    .timeline{position:relative}
-    .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),transparent)}
-    .timeline .entry{position:relative;padding-left:32px;margin-bottom:18px}
-    .timeline .entry .dot{position:absolute;left:0;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(110,231,183,0.06)}
-
-    /* ---------- PROJECT CARDS ---------- */
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .project{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
-
-    /* ---------- CTA FOOTER ---------- */
-    .cta{display:flex;gap:8px;align-items:center}
-    .btn{padding:8px 12px;border-radius:8px;border:0;background:linear-gradient(90deg,#16a34a,#059669);color:#012;cursor:pointer;font-weight:600}
-    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-
-    /* ---------- ANIMATIONS & REVEAL ---------- */
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity 520ms ease,transform 520ms ease}
-    .reveal.is-visible{opacity:1;transform:none}
-    .fade-in{animation:float 6s ease-in-out infinite}
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
-
-    /* ---------- PRINT STYLES ---------- */
-    @media print{body{background:white;color:black} .wrap{max-width:100%;grid-template-columns:1fr} .left .photo{display:none} .btn, .ghost{display:none}}
-  </style>
 </head>
+
 <body>
-  <main class="wrap">
-    <aside class="left card">
-      <div class="photo">
-        <!-- Replace with your profile image (square) -->
-        <img src="images/Photo 2X2.jpg" style="width:100%;height:100%;object-fit:cover">
-      </div>
-      <div class="name">
-        <h1 id="your-name">Jaydeep Gaikwad</h1>
-        <p id="role">Red Hat OpenShift Engineer • Azure • Kubernetes • Terraform</p>
-      </div>
 
-      <div class="section contact" aria-label="contact">
-        <div><strong>Phone:</strong> 7972707428</div>
-        <div><strong>Email:</strong> <a href="mailto:jaydeep.gaikwad@outlook.com" id="email">jaydeep.gaikwad@outlook.com</a></div>
-        <div><strong>Location:</strong> Navi Mumbai, India</div>
-        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/JaydeepGaikwad22" target="_blank">in/JaydeepGaikwad22</a></div>
-        <div><strong>Website:</strong> <a href="https://jaydeep1337.github.io/CV" id="website">https://jaydeep1337.github.io/CV</a></div>
-      </div>
-        <div><strong>Location:</strong> Mumbai, India</div>
-        <div><strong>Website:</strong> <a href="#" id="website">your-site.com</a></div>
-      </div>
+    <!-- ================= NAVIGATION ================= -->
 
-      <div class="section">
-        <h3>Skills</h3>
-        <div class="skill-list" id="skills">
-          <span class="skill">OpenShift</span>
-          <span class="skill">Kubernetes</span>
-          <span class="skill">Terraform</span>
-          <span class="skill">Docker</span>
-          <span class="skill">Prometheus</span>
-          <span class="skill">Grafana</span>
-          <span class="skill">Azure</span>
-          <span class="skill">Bash / Python</span>
-        </div>
-      </div>
+    <header>
 
-      <div class="section">
-        <h3>Languages</h3>
-        <div class="skill-list">
-          <span class="skill">English</span>
-          <span class="skill">Hindi</span>
-          <span class="skill">Marathi</span>
-        </div>
-      </div>
+        <nav class="navbar">
 
-      <div class="section" style="margin-top:18px;text-align:center">
-        <button class="btn" onclick="downloadPDF()">Download PDF</button>
-        <button class="ghost" onclick="toggleTheme()">Toggle Theme</button>
-      </div>
-    </aside>
+            <div class="logo">
 
-    <section class="right card">
-      <div class="hero">
-        <div class="title">
-          <h2 class="reveal">About Me</h2>
-          <span class="reveal">OpenShift Administrator with 3+ years of experience in RHEL administration, Kubernetes/OpenShift cluster management, and Azure cloud operations. Certified Kubernetes Administrator with hands-on experience in automation (Terraform, Bash, Python), monitoring (Prometheus, Grafana), and proactive incident response. Passionate about building secure, scalable, and highly available infrastructure.</span>
-        </div>
-        <div class="cta">
-          <a class="btn" href="#projects">Projects</a>
-          <a class="ghost" href="#contact">Contact</a>
-        </div>
-      </div>
-        <div class="cta">
-          <a class="btn" href="#projects">Projects</a>
-          <a class="ghost" href="#contact">Contact</a>
-        </div>
-      </div>
+                Jaydeep<span>Gaikwad</span>
 
-      <div class="section" id="experience">
-        <h3>Experience</h3>
-        <div class="timeline">
-          <div class="entry reveal">
-            <div class="dot"></div>
-            <div class="exp-item card">
-              <strong>Software Engineer — Royal Cyber Inc</strong>
-              <div style="color:var(--muted);font-size:13px">Jul 2024 – Present</div>
-              <p style="margin-top:8px;color:var(--muted);font-size:14px">Deployed, upgraded, and maintained OpenShift clusters (50+ nodes) on RHEL for high availability and compliance. Monitored cluster health with Prometheus & Grafana; resolved pod scheduling failures, node crashes, and API server outages. Configured RBAC, resource quotas, and service accounts for multi-tenant workloads. Automated patching and backup tasks with Bash scripts, reducing manual overhead by ~40%.</p>
             </div>
-          </div>
 
-          <div class="entry reveal">
-            <div class="dot"></div>
-            <div class="exp-item card">
-              <strong>Senior System Associate — Infosys Limited</strong>
-              <div style="color:var(--muted);font-size:13px">Dec 2021 – Apr 2024</div>
-              <p style="margin-top:8px;color:var(--muted);font-size:14px">Assisted in managing AKS clusters and Azure infrastructure: node pool scaling, monitoring with Azure Monitor/Log Analytics, and troubleshooting pod scheduling issues. Provisioned and maintained Azure VMs, Blob storage and SQL under best-practice security controls. Automated tasks using Azure CLI/PowerShell and documented runbooks to improve team knowledge sharing.</p>
-          
+            <ul class="nav-links">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#skills">Skills</a></li>
+
+                <li><a href="#experience">Experience</a></li>
+
+                <li><a href="#projects">Projects</a></li>
+
+                <li><a href="#certifications">Certifications</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-left">
+
+            <h1>
+
+                Hi,
+
+                <br>
+
+                I'm
+
+                <span>Jaydeep Gaikwad</span>
+
+            </h1>
+
+            <h2>
+
+                DevOps Engineer
+
+            </h2>
+
+            <h3>
+
+                Azure DevOps • OpenShift • Kubernetes • Terraform
+
+            </h3>
+
+            <p>
+
+                DevOps Engineer with 4 years of experience in CI/CD pipeline automation,
+                Kubernetes/OpenShift platforms, RHEL administration and Azure cloud
+                operations.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn-primary">
+
+                    View Projects
+
+                </a>
+
+                <a href="#contact" class="btn-secondary">
+
+                    Contact Me
+
+                </a>
+
+            </div>
+
         </div>
-      </div>
 
-      <div class="section" id="projects">
-        <h3>Selected Projects</h3>
-        <div class="projects">
-          <article class="project reveal">
-            <h4>Kubernetes Migration & Auto-Scaling for E-Commerce Platform</h4>
-            <p style="color:var(--muted);font-size:13px">Containerized a monolithic application and deployed on EKS using Helm charts. Implemented HPA using custom metrics and optimized resource usage — achieved 50% faster deployments and ~40% cost savings during peak loads. Tools: Kubernetes, Helm, Terraform, Prometheus.</p>
-            <div style="margin-top:8px"><a href="#">View details</a></div>
-          </article>
+        <div class="hero-right">
 
-          <article class="project reveal">
-            <h4>IaC-Driven Azure Environment Provisioning</h4>
-            <p style="color:var(--muted);font-size:13px">Built reusable Terraform modules for dev/stage/prod environments, integrated validation with GitLab CI and automated environment spin-up. Reduced environment provisioning time by ~80%. Tools: Terraform, Azure VNet, Azure VMs, Azure Blob, GitLab CI.</p>
-          </article>
+            <img src="images/Photo 2X2.jpg"
+                 alt="Jaydeep Gaikwad">
+
         </div>
-      </div>
-
-      <div class="section" id="certifications">
-        <h3>Certifications</h3>
-        <ul style="color:var(--muted);margin:8px 0 0 16px">
-          <li><a href="https://www.credly.com/badges/fdc2458e-3810-4c6b-9fe1-e3ee1b8af3bd">Certified Kubernetes Administrator (CKA) - Cloud Native Computing Foundation (CNCF)</a></li>
-          <li><a href="https://learn.microsoft.com/api/credentials/share/en-in/jaydeepgaikwad-8213/BD0712D88C8EB46?sharingId=7739C0899A18B076">AZ-104 Microsoft Certified Azure Administrator - Microsoft</a></li>
-          <li><a href="https://learn.microsoft.com/api/credentials/share/en-in/jaydeepgaikwad-8213/B1C4F7766EC6A7BA?sharingId=7739C0899A18B076">AZ-900 Microsoft Certified Azure Fundamentals - Microsoft</a></li>
-          <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/jaydeepgaikwad-8213/66A38B72483E675B?sharingId=7739C0899A18B076">DP-900 Microsoft Certified Azure Data Fundamentals - Microsoft</a></li>
-          <li><a href="https://learn.microsoft.com/en-us/users/jaydeepgaikwad-8213/credentials/60496a4c450814a5?">AI-900 Microsoft Certified: Azure AI Fundamentals - Microsoft</a></li>
-        
-        </ul>
-      </div>
-
-      <div class="section" id="education">
-        <h3>Education</h3>
-        <div style="color:var(--muted);font-size:14px">
-          <strong>Master of Science in Computer Applications</strong> — Modern College, Pune (2021 – 2023)<br>
-          <strong>Bachelor of Computer Applications</strong> — Modern College, Pune (2018 – 2021)
-        </div>
-      </div>
-
-      <div class="section" id="contact">
-        <h3>Contact</h3>
-        <p id="contact-para" class="reveal">Feel free to reach out — I'm open to interviews and freelance work.</p>
-        <p style="color:var(--muted)">Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      </div>
 
     </section>
-  </main>
 
-  <script>
-    // ---------- Simple reveal on scroll (no deps) ----------
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting) e.target.classList.add('is-visible');
-      });
-    },{threshold:0.12});
+    <!-- ================= ABOUT ================= -->
 
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    <section id="about">
 
-    // ---------- Theme toggle (example) ----------
-    function toggleTheme(){
-      if(document.documentElement.style.getPropertyValue('--bg') === ''){
-        // simple example: invert
-        document.documentElement.style.setProperty('--bg','#ffffff');
-        document.documentElement.style.setProperty('--card','#f8fafc');
-        document.documentElement.style.setProperty('--muted','#475569');
-      } else {
-        document.documentElement.style.removeProperty('--bg');
-        document.documentElement.style.removeProperty('--card');
-        document.documentElement.style.removeProperty('--muted');
-      }
-    }
+        <div class="section-title">
 
-    // ---------- Download as PDF (print media) ----------
-    function downloadPDF(){
-      // This triggers the browser print dialog which can 'Save as PDF'
-      window.print();
-    }
+            <h2>
 
-    // Small helper: replace placeholders if you want to inject dynamic data
-    const data = {
-      name: 'Jaydeep Gaikwad',
-      role: 'Azure DevOps Engineer • Kubernetes • Terraform',
-      email: 'jaydeep@example.com',
-    };
-    document.getElementById('your-name').textContent = data.name;
-    document.getElementById('role').textContent = data.role;
-    document.getElementById('email').textContent = data.email; document.getElementById('email').href = 'mailto:'+data.email;
-    // Accessibility: reduce motion if user prefers
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if(mq.matches){
-      document.querySelectorAll('.fade-in').forEach(n=>n.style.animation='none');
-    }
-  </script>
+                About Me
 
-  <!--
-    HOW TO CUSTOMIZE
-    4) For larger changes, split CSS into style.css and JS into main.js and update the <link>/<script> accordingly.
-    5) To host: commit this file as index.html in the repo's root or the gh-pages branch.
-    6) For animated sections using libraries, consider adding AOS (https://michalsnik.github.io/aos/) or GSAP for advanced motion.
+            </h2>
 
-    WANT ME TO INTEGRATE YOUR RESUME?
-    - If you paste your latest resume text or share a PDF, I can integrate the Experience and Projects sections directly into this file and provide the ready-to-upload index.html for you.
-  -->
+        </div>
+
+        <div class="about-card">
+
+            <p>
+
+                DevOps Engineer with <strong>4 years of experience</strong> designing,
+                supporting and automating enterprise infrastructure.
+
+            </p>
+
+            <p>
+
+                Experienced with Azure DevOps, Kubernetes, Red Hat OpenShift,
+                Docker, Terraform, Helm, Azure Cloud, Bash scripting,
+                Prometheus and Grafana.
+
+            </p>
+
+            <p>
+
+                Certified Kubernetes Administrator (CKA) with experience
+                managing enterprise OpenShift clusters, CI/CD pipelines,
+                infrastructure automation and production support.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= QUICK INFO ================= -->
+
+    <section class="quick-info">
+
+        <div class="info-card">
+
+            <h3>
+
+                Location
+
+            </h3>
+
+            <p>
+
+                Pune, Maharashtra, India
+
+            </p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h3>
+
+                Experience
+
+            </h3>
+
+            <p>
+
+                4 Years
+
+            </p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h3>
+
+                Current Role
+
+            </h3>
+
+            <p>
+
+                DevOps Engineer
+
+            </p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h3>
+
+                Specialization
+
+            </h3>
+
+            <p>
+
+                OpenShift Platform Engineering
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>
+
+                Technical Skills
+
+            </h2>
+
+        </div>
+
+        <div class="skills-grid">
+
+    <div class="skill-card">
+        <img src="icons/azure.svg" alt="Azure">
+        <span>Azure</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/azure-devops.svg" alt="Azure DevOps">
+        <span>Azure DevOps</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/docker.svg" alt="Docker">
+        <span>Docker</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/kubernetes.svg" alt="Kubernetes">
+        <span>Kubernetes</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/openshift.svg" alt="OpenShift">
+        <span>OpenShift</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/terraform.svg" alt="Terraform">
+        <span>Terraform</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/jenkins.svg" alt="Jenkins">
+        <span>Jenkins</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/git.svg" alt="Git">
+        <span>Git</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/github.svg" alt="GitHub">
+        <span>GitHub</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/linux.svg" alt="Linux">
+        <span>Linux</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/python.svg" alt="Python">
+        <span>Python</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/helm.svg" alt="Helm">
+        <span>Helm</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/prometheus.svg" alt="Prometheus">
+        <span>Prometheus</span>
+    </div>
+
+    <div class="skill-card">
+        <img src="icons/grafana.svg" alt="Grafana">
+        <span>Grafana</span>
+    </div>
+
+</div>
+        </div>
+
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+    <div class="section-title">
+        <h2>Professional Experience</h2>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                Jul 2024 – Mar 2026
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>Software Engineer (DevOps)</h3>
+
+                <h4>Royal Cyber Inc.</h4>
+
+                <ul>
+
+                    <li>Designed, deployed and upgraded enterprise Red Hat OpenShift 4.16 clusters supporting 50+ nodes.</li>
+
+                    <li>Managed namespaces, RBAC, SCCs, Storage Classes, PV/PVC, networking and application workloads.</li>
+
+                    <li>Implemented enterprise security using Security Context Constraints (SCC), Network Policies and audit logging.</li>
+
+                    <li>Troubleshot production Kubernetes and OpenShift issues using Prometheus, Grafana and centralized logging.</li>
+
+                    <li>Performed etcd backup, disaster recovery validation and platform maintenance.</li>
+
+                    <li>Administered LinuxONE, RHEL, IBM LPAR, KVM virtual machines, LVM, SAN and NFS storage.</li>
+
+                    <li>Performed Root Cause Analysis (RCA) and implemented preventive solutions to improve platform reliability.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                Dec 2021 – Apr 2024
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>Senior System Associate</h3>
+
+                <h4>Infosys Limited</h4>
+
+                <ul>
+
+                    <li>Supported Azure enterprise environments handling incidents and operational requests.</li>
+
+                    <li>Managed Azure Kubernetes Service (AKS) clusters including workload monitoring and node pool scaling.</li>
+
+                    <li>Monitored Azure resources using Azure Monitor and Log Analytics.</li>
+
+                    <li>Provisioned Azure Virtual Machines, Blob Storage and Azure SQL Databases.</li>
+
+                    <li>Supported Azure Backup and Azure Site Recovery during disaster recovery exercises.</li>
+
+                    <li>Worked within SLA-driven production support environments.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CERTIFICATIONS ================= -->
+
+<section id="certifications">
+
+    <div class="section-title">
+
+        <h2>Certifications</h2>
+
+    </div>
+
+    <div class="certification-grid">
+
+        <div class="cert-card">
+            <h3>AZ-400</h3>
+            <p>Microsoft Certified DevOps Engineer Expert</p>
+            <span>2026</span>
+        </div>
+
+        <div class="cert-card">
+            <h3>CKA</h3>
+            <p>Certified Kubernetes Administrator</p>
+            <span>CNCF</span>
+        </div>
+
+        <div class="cert-card">
+            <h3>AZ-104</h3>
+            <p>Microsoft Azure Administrator Associate</p>
+            <span>2025</span>
+        </div>
+
+        <div class="cert-card">
+            <h3>AZ-900</h3>
+            <p>Microsoft Azure Fundamentals</p>
+            <span>2023</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+    <div class="section-title">
+
+        <h2>Education</h2>
+
+    </div>
+
+    <div class="education-grid">
+
+        <div class="education-card">
+
+            <h3>Master of Science in Computer Applications</h3>
+
+            <h4>Modern College, Pune</h4>
+
+            <p>2021 – 2023</p>
+
+        </div>
+
+        <div class="education-card">
+
+            <h3>Bachelor of Computer Applications</h3>
+
+            <h4>Modern College, Pune</h4>
+
+            <p>2018 – 2021</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="section-title">
+
+        <h2>Featured Projects</h2>
+
+    </div>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+
+            <h3>Enterprise CI/CD Pipeline</h3>
+
+            <p>
+
+                Building an enterprise-grade CI/CD pipeline using
+                Azure DevOps, Docker, Kubernetes, Helm,
+                GitHub Container Registry, Prometheus,
+                Grafana and Trivy.
+
+            </p>
+
+            <div class="tech-stack">
+
+                <span>Azure DevOps</span>
+
+                <span>Docker</span>
+
+                <span>Kubernetes</span>
+
+                <span>Helm</span>
+
+                <span>OpenShift</span>
+
+                <span>Trivy</span>
+
+                <span>Grafana</span>
+
+            </div>
+
+            <a href="#" class="project-button">
+
+                Project In Progress
+
+            </a>
+
+        </div>
+
+        <div class="project-card">
+
+            <h3>OpenShift Platform Administration</h3>
+
+            <p>
+
+                Managed enterprise Red Hat OpenShift clusters,
+                platform upgrades, RBAC, SCC,
+                monitoring, disaster recovery,
+                Linux administration and production support.
+
+            </p>
+
+        </div>
+
+        <div class="project-card">
+
+            <h3>Azure Operations</h3>
+
+            <p>
+
+                Supported Azure infrastructure,
+                AKS clusters,
+                Azure Monitor,
+                Backup,
+                Site Recovery
+                and enterprise cloud operations.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section id="achievements">
+
+    <div class="section-title">
+
+        <h2>Professional Highlights</h2>
+
+    </div>
+
+    <div class="achievement-grid">
+
+        <div class="achievement-card">
+
+            <h2>4+</h2>
+
+            <p>Years Experience</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h2>50+</h2>
+
+            <p>OpenShift Cluster Nodes Managed</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h2>4</h2>
+
+            <p>Microsoft Certifications</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h2>1</h2>
+
+            <p>Certified Kubernetes Administrator</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <h2>Let's Connect</h2>
+
+    </div>
+
+    <div class="contact-card">
+
+    <i class="fa-solid fa-envelope"></i>
+
+    <h3>Email</h3>
+
+    <a href="mailto:jaydeep.gaikwad@outlook.com">
+        jaydeep.gaikwad@outlook.com
+    </a>
+
+    </div>
+
+        <div class="contact-card">
+
+    <i class="fa-solid fa-phone"></i>
+
+    <h3>Phone</h3>
+
+    <p>
+
+        +91 7972707428
+
+    </p>
+
+    </div>
+
+        <div class="contact-card">
+
+            <h3>Location</h3>
+
+            <p>
+
+                Pune, Maharashtra, India
+
+            </p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <h3>LinkedIn</h3>
+
+            <a href="https://www.linkedin.com/in/JaydeepGaikwad22"
+
+               target="_blank">
+
+                linkedin.com/in/JaydeepGaikwad22
+
+            </a>
+
+        </div>
+
+        <div class="contact-card">
+
+            <h3>GitHub</h3>
+
+            <a href="https://github.com/Jaydeep1337"
+
+               target="_blank">
+
+                github.com/Jaydeep1337
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="cta-section">
+
+    <h2>
+
+        Interested in working together?
+
+    </h2>
+
+    <p>
+
+        I'm actively looking for opportunities in DevOps,
+        Platform Engineering,
+        Kubernetes,
+        OpenShift and Cloud Infrastructure.
+
+    </p>
+
+    <div class="cta-buttons">
+
+        <a href="mailto:jaydeep.gaikwad@outlook.com"
+
+           class="btn-primary">
+
+            Hire Me
+
+        </a>
+
+        <a href="resume/Jaydeep_Gaikwad_Resume.pdf"
+
+           class="btn-secondary"
+
+           download>
+
+            Download Resume
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <h3>
+
+            Jaydeep Gaikwad
+
+        </h3>
+
+        <p>
+
+            DevOps Engineer • Kubernetes • OpenShift • Azure • Terraform
+
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#experience">Experience</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+        <div class="social-icons">
+
+            <a href="https://github.com/Jaydeep1337"
+
+               target="_blank">
+
+                GitHub
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/JaydeepGaikwad22"
+
+               target="_blank">
+
+                LinkedIn
+
+            </a>
+
+        </div>
+
+        <p class="copyright">
+
+            © 2026 Jaydeep Gaikwad
+
+            <br>
+
+            Built using HTML, CSS & JavaScript
+
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- ================= SCROLL TO TOP ================= -->
+
+<button id="scrollTopBtn">
+
+    ↑
+
+</button>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
