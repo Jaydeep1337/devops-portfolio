@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-portfolio
+  labels:
+    app: devops-portfolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-portfolio
+  template:
+    metadata:
+      labels:
+        app: devops-portfolio
+    spec:
+      containers:
+      - name: devops-portfolio
+        image: jaydeepregistry.azurecr.io/devops-portfolio:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
