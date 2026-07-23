@@ -7,7 +7,7 @@ pool:
 variables:
   imageRepository: devops-portfolio
   dockerRegistryServiceConnection: ACR-Connection
-  azureSubscription: Azure-Service-Connection
+  azureSubscription: ARM Service Connection
   aksResourceGroup: rg-devops-portfolio
   aksClusterName: DevOps-AKS
   namespace: default
