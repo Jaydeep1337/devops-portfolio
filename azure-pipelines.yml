@@ -13,6 +13,7 @@ variables:
   namespace: default
   deploymentName: portfolio-deployment
   containerName: portfolio
+  tag: $(Build.BuildId)
 
 stages:
 - stage: Build
