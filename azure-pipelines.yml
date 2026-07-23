@@ -52,6 +52,19 @@ stages:
 
         deploy:
           steps:
+
+          - script: |
+               echo "Current Directory"
+               pwd
+               echo ""
+               echo "Repository Structure"
+               find .
+
+               echo ""
+               echo "Kubernetes Folder"
+               ls -la kubernetes
+            displayName: Debug Repository
+
           - task: KubernetesManifest@1
 
             displayName: Deploy to AKS
