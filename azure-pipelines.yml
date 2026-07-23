@@ -52,7 +52,7 @@ stages:
 
         deploy:
           steps:
-
+          - checkout: self
           - script: |
                echo "Current Directory"
                pwd
