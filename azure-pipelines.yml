@@ -9,7 +9,7 @@ variables:
   dockerRegistryServiceConnection: ACR-Connection
   azureSubscription: ARM Service Connection
   aksResourceGroup: rg-devops-portfolio
-  aksClusterName: DevOps-AKS
+  aksClusterName: portfolio-aks
   namespace: default
   deploymentName: portfolio-deployment
   containerName: portfolio
