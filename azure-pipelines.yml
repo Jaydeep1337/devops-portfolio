@@ -71,8 +71,8 @@ stages:
               namespace: $(namespace)
 
               manifests: |
-                k8s/deployment.yaml
-                k8s/service.yaml
+                kubernetes/deployment.yaml
+                kubernetes/service.yaml
 
               containers: |
                 $(imageRepository):$(tag)
