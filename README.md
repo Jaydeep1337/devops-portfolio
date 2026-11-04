@@ -138,8 +138,7 @@ kubectl apply -f kubernetes/service.yaml
 ---
 
 ## Screenshots
-
-> Add screenshots after completing the project:
+ Did not take any will do it later !
 - Azure DevOps Pipeline
 - Azure Container Registry
 - AKS Cluster
@@ -153,3 +152,6 @@ kubectl apply -f kubernetes/service.yaml
 **Jaydeep Gaikwad**
 
 DevOps Engineer
+
+
+Used chatgpt for documentation purpose.
