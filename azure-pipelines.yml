@@ -9,6 +9,7 @@ variables:
   dockerRegistryServiceConnection: ACR-Connection
   azureSubscription: ARM CodeCloud connection
   aksResourceGroup: rg-devops-portfolio
+  containerRegistry: newacrmain.azurecr.io
   aksClusterName: portfolio-aks
   namespace: default
   deploymentName: portfolio-deployment
