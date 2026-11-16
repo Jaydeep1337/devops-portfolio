@@ -7,7 +7,7 @@ pool:
 variables:
   imageRepository: devops-portfolio
   dockerRegistryServiceConnection: ACR-Connection
-  azureSubscription: ARM CodeCloud connection
+  azureSubscription: ARM-CodeCloud-connection
   aksResourceGroup: rg-devops-portfolio
   containerRegistry: newacrmain.azurecr.io
   aksClusterName: portfolio-aks
